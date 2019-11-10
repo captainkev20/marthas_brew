@@ -20,10 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="#" class="nav-link">Home</a>
+                <a href="http://localhost:8888/marthas_brew" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">About</a>
+                <a href="http://localhost:8888/marthas_brew/about_us" class="nav-link">About Us</a>
             </li>
         </ul>
     </div>
