@@ -7,17 +7,23 @@
     </head>
 
     <body>
-        <div class="container">
-            <?php foreach ($orders as $order_item): ?>
-                <div class="col-sm-4 col-md-3">
-                    <div class="products">
-                        <img src="http://localhost:8888/marthas_brew/assets/images/items/<?php echo $order_item['picture']; ?>"
-                             height="90" width="90" class="img-responsive"/>
-                        <h4 class="text-info"><?php echo $order_item['name']; ?></h4>
-                        <h4 class="text-info"><?php echo $order_item['cost']; ?></h4>
-                        <input type="submit" name="add_item" class="btn btn-info" value="Add Item"
+    <div class="row">
+        <div class="container" style="width:600px;">
+            <?php foreach($orders as $order_item):?>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="http://localhost:8888/marthas_brew/assets/images/items/<?php echo $order_item['picture']; ?>"
+                         height="180" width="90" class="img-responsive">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $order_item['name']; ?></h5>
+                        <p class="card-price"><?php echo $order_item['cost']; ?></p>
+                        <p style="text-align:center;color:#04B745;">
+                            <button type="submit" class="btn btn-primary">Add To Cart</button>
                     </div>
                 </div>
-            <?php endforeach; ?>
+                <br>
+            </div>
+            <?php endforeach;?>
+        </div>
     </body>
 </html>
