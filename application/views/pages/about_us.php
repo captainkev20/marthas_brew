@@ -8,11 +8,10 @@
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
 
-    <h2 class="section-heading h1 pt-4">About Martha's Brew</h2>
     <!--Section description-->
     <p class="section-description pb-4">Since October 2019, we at Martha's Brew have strived to provide to best
-    quality service in the area. We know how much you folks at Data Management love your coffee, so if our service does
-    not meet your standards, please don't hesitate to reach out!</p>
+        quality service in the area. We know how much you folks at Data Management love your coffee, so if our service does
+        not meet your standards, please don't hesitate to reach out!</p>
 
     <div class="row">
         <!--Grid column-->
