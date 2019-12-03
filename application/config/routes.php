@@ -50,7 +50,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['orders/(:any)'] = 'orders/view/$1';
-$route['orders'] = 'orders';
-$route['(:any)'] = 'pages/view/$1';
-$route['default_controller'] = 'pages/view';
+
+$route['default_controller'] = 'orders';
