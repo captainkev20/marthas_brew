@@ -24,67 +24,106 @@
             });
         </script>
     </head>
-
-
-
     <body>
-    <div class="row">
-        <div class="column">
-
-            <div class="container" style="width:600px;">
-                <?php foreach($orders as $order_item):?>
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="http://localhost:8888/marthas_brew/assets/images/items/<?php echo $order_item['picture']; ?>"
-                                 height="180" width="90" class="img-responsive">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $order_item['name']; ?></h5>
-                                <p class="card-price"><?php echo $order_item['cost']; ?></p>
-                                <p style="text-align:center;color:#04B745;">
-                                    <button type="submit" class="btn btn-primary">Add To Cart</button>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                <?php endforeach;?>
-            </div>
-        </div>
-
-
-        <div class="col-md-3 col-md-offset-3">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Pickup Time</div>
-                <div class="panel-body">
+        <div class="container">
+            <form method="post" action="/marthas_brew/orders/submit">
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="hot-tab" data-toggle="tab" href="#hot" role="tab" aria-controls="hot" aria-selected="true">Hot</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="cold-tab" data-toggle="tab" href="#cold" role="tab" aria-controls="Cold" aria-selected="false">Cold</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="hot" role="tabpanel" aria-labelledby="hot-tab">
                     <div class="row">
-                        <div class='col-md-6'>
-                            <div class="form-group">
-                                <label class="control-label">Pickup Time</label>
-                                <div class='input-group date' id='datetimepicker1'>
-                                    <input type='text' class="form-control" />
-                                    <span class="input-group-addon">
-                     <span class="glyphicon glyphicon-calendar"></span>
-                     </span>
+                        <?php foreach($hot_items as $item):?>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top"
+                                         src="/marthas_brew/assets/images/items/<?php echo $item['picture']; ?>"
+                                         class="img-responsive">
+                                    <div class="card-header">
+                                        <h3 class="card-title"><?php echo $item['name']; ?></h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-price"><?php echo $item['cost']; ?></p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="<?php echo $item['id']; ?>" name="items[]"> Add to cart
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach;?>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="cold" role="tabpanel" aria-labelledby="cold-tab">
+                    <div class="row">
+                        <?php foreach($cold_items as $item):?>
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img class="card-img-top"
+                                         src="/marthas_brew/assets/images/items/<?php echo $item['picture']; ?>"
+                                         class="img-responsive">
+                                    <div class="card-header">
+                                        <h3 class="card-title"><?php echo $item['name']; ?></h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-price"><?php echo $item['cost']; ?></p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="<?php echo $item['id']; ?>" name="items[]"> Add to cart
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach;?>
+                    </div>
+                </div>
+            </div>
+                    <div class="card card-primary mt-4">
+                        <div class="card-header">Customer Details</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class='col-md-4'>
+                                    <div class="form-group">
+                                        <label class="control-label" for="pickup_time">Pickup Time</label>
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input id="pickup_time" name="pickup_time" type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="customer_name">Customer Name</label><br/>
+                                        <input id="customer_name" class="form-control" name="customer_name" type="text" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="phone_number">Phone Number</label><br/>
+                                        <input id="phone_number" class="form-control" name="phone_number" type="tel" required>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="card-footer">
+                            <input type="submit" class="btn btn-primary" value="Sumbit Order">
+                        </div>
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Set Pickup Time">
-                </div>
-            </div>
         </div>
-
-        <div class="col-md-3 col-md-offset-3">
-            <form>
-                <h2>Phone Number</h2>
-                <label for="tel_number">Pleas enter as: (xxx-xxx-xxxx):</label><br/>
-                <input id="tel_number" type="tel" pattern=^\d{3}-\d{3}-\d{4}$" required >
-                <br>
-                <input type="submit" class="btn btn-primary" value="Submit">
-            </form>
-        </div>
-        <!--Close row-->
-    </div>
-
+    </form>
     </body>
 
 </html>
