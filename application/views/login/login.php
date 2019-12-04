@@ -13,9 +13,9 @@
                     <div class="row">
                         <div class='col-md-4'>
                             <div class="form-group">
-                                <label class="control-label" for="pickup_time">Username</label>
+                                <label class="control-label" for="username">Username</label>
                                 <div class='input-group date' id='datetimepicker1'>
-                                    <input id="pickup_time" name="pickup_time" type='text' class="form-control" />
+                                    <input id="username" name="username" type='text' class="form-control" />
                                     <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -24,8 +24,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label class="control-label" for="customer_name">Password</label><br/>
-                                <input id="customer_name" class="form-control" name="customer_name" type="text" required>
+                                <label class="control-label" for="password">Password</label><br/>
+                                <input id="password" class="form-control" name="password" type="text" required>
                             </div>
                         </div>
                     </div>
