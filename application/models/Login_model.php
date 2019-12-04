@@ -9,7 +9,6 @@ class Login_model extends CI_Model {
         $query = $this->db->get('users.users');
 
         if($query->num_rows() == 1) {
-            echo "user is verified!";
             return $query->result();
         } else {
             return false;
