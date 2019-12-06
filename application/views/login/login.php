@@ -14,7 +14,7 @@
                             <div class="form-group">
                                 <label class="control-label" for="username">Username</label>
                                 <div class='input-group date' id='datetimepicker1'>
-                                    <input id="username" name="username" type='text' class="form-control" />
+                                    <input id="username" name="username" type='text' class="form-control" required />
                                     <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
