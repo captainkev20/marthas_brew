@@ -28,6 +28,10 @@
             <li class="nav-item">
                 <a href="http://localhost:8888/marthas_brew/orders" class="nav-link">Order</a>
             </li>
+
+            <li class="nav-item">
+                <a href="http://localhost:8888/marthas_brew/login" class="nav-link">Staff Login</a>
+            </li>
         </ul>
     </div>
 
