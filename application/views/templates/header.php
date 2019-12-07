@@ -23,7 +23,7 @@
                 <a href="http://localhost:8888/marthas_brew" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="http://localhost:8888/marthas_brew/about_us" class="nav-link">About Us</a>
+                <a href="http://localhost:8888/marthas_brew/about" class="nav-link">About Us</a>
             </li>
             <li class="nav-item">
                 <a href="http://localhost:8888/marthas_brew/orders" class="nav-link">Order</a>
