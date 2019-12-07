@@ -59,7 +59,7 @@
                     <?php endforeach;?>
                 </div>
             </div>
-            <div class="tab-pane fade" id="paid" role="tabpanel" aria-labelledby="paid-tab">
+            <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="paid-tab">
                 <div class="row">
                     <?php foreach($completed_orders as $completed_order):?>
                         <div class="col-md-4">
