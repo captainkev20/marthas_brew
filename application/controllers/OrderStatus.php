@@ -11,9 +11,6 @@ class OrderStatus extends CI_Controller {
         $data['pending_orders'] = $this->Orders_model->get_pending();
         $data['completed_orders'] = $this->Orders_model->get_paid();
 
-        //var_dump($data);
-        //print_r($data);
-
         // Set title
         $data['title'] = 'View Pending Orders';
 
@@ -25,5 +22,15 @@ class OrderStatus extends CI_Controller {
 
         // Load template footer
         $this->load->view('templates/footer');
+    }
+
+    public function markOrderAsStarted() {
+        $items = $this->input->post('items');
+
+        foreach($items as $item_id) {
+            $this->Orders_model->update($item_id,'started');
+        }
+
+        echo "Changes saved";
     }
 }

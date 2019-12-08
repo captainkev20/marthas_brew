@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="container">
-    <form method="post" action="/marthas_brew/orders/submit">
+    <form method="post" action="/marthas_brew/orderstatus/markOrderAsStarted">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="pending-tab" data-toggle="tab" href="#pending" role="tab" aria-controls="hot" aria-selected="true">Pending</a>
@@ -42,10 +42,12 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title"><?php echo $pending_order['customer_name']; ?></h3>
+                                    <h1 class="card-title">Name:</h1>
+                                    <h4 class="card-title"><?php echo $pending_order['customer_name']; ?></h4>
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-price"><?php echo $pending_order['phone_number']; ?></p>
+                                    <p class="card-price">Phone: <?php echo $pending_order['phone_number']; ?></p>
+
                                 </div>
                                 <div class="card-footer">
                                     <div class="checkbox">
@@ -76,6 +78,7 @@
                                             <input type="checkbox" value="<?php echo $completed_order['id']; ?>" name="items[]"> Add to cart
                                         </label>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -87,7 +90,7 @@
         <br>
 
         <div class="btn-primary">
-            <input type="submit_changes" class="btn btn-primary" value="Submit Changes">
+            <input type="submit" class="btn btn-primary" value="Submit Changes">
 
         </div>
 
