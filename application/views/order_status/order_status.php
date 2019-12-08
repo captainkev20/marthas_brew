@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="container">
-    <form method="post" action="/marthas_brew/orderstatus/submitChanges">
+    <form method="post" action="/marthas_brew/orderstatus/markOrderAsStarted">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="pending-tab" data-toggle="tab" href="#pending" role="tab" aria-controls="hot" aria-selected="true">Pending</a>
