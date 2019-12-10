@@ -13,6 +13,12 @@ class Orders_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_started() {
+        $this->db->where('status','started');
+        $query = $this->db->get('orders');
+        return $query->result_array();
+    }
+
     public function get_paid() {
         $this->db->where('status','paid');
         $query = $this->db->get('orders');
