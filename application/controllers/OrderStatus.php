@@ -10,6 +10,7 @@ class OrderStatus extends CI_Controller {
     public function index() {
         $data['pending_orders'] = $this->Orders_model->get_pending();
         $data['completed_orders'] = $this->Orders_model->get_paid();
+        $data['started_orders'] = $this->Orders_model->get_started();
 
         // Set title
         $data['title'] = 'View Pending Orders';
@@ -26,11 +27,14 @@ class OrderStatus extends CI_Controller {
 
     public function markOrderAsStarted() {
         $items = $this->input->post('items');
+        $completed_items = $this->input->post('completeditems');
 
         foreach($items as $item_id) {
             $this->Orders_model->update($item_id,'started');
         }
 
-        echo "Changes saved";
+        foreach($completed_items as $item_id) {
+            $this->Orders_model->update($item_id,'completed');
+        }
     }
 }
