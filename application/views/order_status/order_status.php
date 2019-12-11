@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="container">
-    <form method="post" action="/marthas_brew/orderstatus/markOrderAsStarted">
+    <form method="post" action="/marthas_brew/orderstatus/updateOrderStatus">
         <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="pending-tab" data-toggle="tab" href="#pending" role="tab" aria-controls="hot" aria-selected="true">Pending</a>
@@ -58,6 +58,10 @@
                                         <label>
                                             <input type="checkbox" id="1" value="<?php echo $pending_order['id']; ?>" name="items[]"> Started
                                         </label>
+                                        <label>
+                                            <input type="checkbox" id="2" value="<?php echo $pending_order['id']; ?>" name="cancelleditems[]"> Cancel
+                                        </label>
+
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +83,7 @@
                                 <div class="card-footer">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" id="2" value="<?php echo $completed_order['id']; ?>" name="items[]"> Add to cart
+                                            <input type="checkbox" id="3" value="<?php echo $completed_order['id']; ?>" name="items[]"> Add to cart
                                         </label>
                                     </div>
 
@@ -103,7 +107,7 @@
                                 <div class="card-footer">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" id="3" value="<?php echo $started_order['id']; ?>" name="completeditems[]"> Completed
+                                            <input type="checkbox" id="4" value="<?php echo $started_order['id']; ?>" name="completeditems[]"> Completed
                                         </label>
                                     </div>
 
