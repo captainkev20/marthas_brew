@@ -20,8 +20,14 @@ class Orders_model extends CI_Model {
         return $query->result_array();
     }
 
+    public function get_completed() {
+        $this->db->where('status','completed');
+        $query = $this->db->get('orders');
+        return $query->result_array();
+    }
+
     public function get_paid() {
-        $this->db->where('status','paid');
+        $this->db->where('paid_status','paid');
         $query = $this->db->get('orders');
         return $query->result_array();
     }
