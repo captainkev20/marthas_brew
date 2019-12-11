@@ -48,13 +48,16 @@
                                         <h3 class="card-title"><?php echo $item['name']; ?></h3>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-price"><?php echo $item['cost']; ?></p>
+                                        <p class="card-price">$<?php echo $item['cost']; ?></p>
                                     </div>
                                     <div class="card-footer">
+                                        <p class="card-customization-text">Order customizations: </p>
+                                        <textarea name="Text1" maxlength="50"></textarea>
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox" value="<?php echo $item['id']; ?>" name="items[]"> Add to cart
                                             </label>
+
                                         </div>
                                     </div>
                                 </div>
@@ -74,9 +77,11 @@
                                         <h3 class="card-title"><?php echo $item['name']; ?></h3>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-price"><?php echo $item['cost']; ?></p>
+                                        <p class="card-price">$<?php echo $item['cost']; ?></p>
                                     </div>
                                     <div class="card-footer">
+                                        <p class="card-customization-text">Order customizations: </p>
+                                        <textarea name="Text1" maxlength="50"></textarea>
                                         <div class="checkbox">
                                             <label>
                                                 <input type="checkbox" value="<?php echo $item['id']; ?>" name="items[]"> Add to cart
