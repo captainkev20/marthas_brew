@@ -9,11 +9,12 @@ class OrderStatus extends CI_Controller {
 
     public function index() {
         $data['pending_orders'] = $this->Orders_model->get_pending();
-        $data['completed_orders'] = $this->Orders_model->get_paid();
+        $data['completed_orders'] = $this->Orders_model->get_completed();
         $data['started_orders'] = $this->Orders_model->get_started();
+        $data['paid_orders'] = $this->Orders_model->get_paid();
 
         // Set title
-        $data['title'] = 'View Pending Orders';
+        $data['title'] = 'Order Status';
 
         // Load template header
         $this->load->view('templates/header', $data);
