@@ -32,13 +32,16 @@
                 <a class="nav-link active" id="pending-tab" data-toggle="tab" href="#pending" role="tab" aria-controls="hot" aria-selected="true">Pending</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="completed-tab" data-toggle="tab" href="#completed" role="tab" aria-controls="Cold" aria-selected="false">Completed</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" id="started-tab" data-toggle="tab" href="#started" role="tab" aria-controls="started" aria-selected="false">Started</a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" id="paid-tab" data-toggle="tab" href="#paid" role="tab" aria-controls="paid" aria-selected="false">Paid</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="completed-tab" data-toggle="tab" href="#completed" role="tab" aria-controls="Cold" aria-selected="false">Completed</a>
+            </li>
         </ul>
+
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
                 <div class="row">
@@ -69,30 +72,6 @@
                     <?php endforeach;?>
                 </div>
             </div>
-            <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="paid-tab">
-                <div class="row">
-                    <?php foreach($completed_orders as $completed_order):?>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title"><?php echo $completed_order['customer_name']; ?></h3>
-                                </div>
-                                <div class="card-body">
-                                    <p class="card-price"><?php echo $completed_order['phone_number']; ?></p>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" id="3" value="<?php echo $completed_order['id']; ?>" name="items[]"> Add to cart
-                                        </label>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach;?>
-                </div>
-            </div>
             <div class="tab-pane fade" id="started" role="tabpanel" aria-labelledby="started-tab">
                 <div class="row">
                     <?php foreach($started_orders as $started_order):?>
@@ -117,18 +96,54 @@
                     <?php endforeach;?>
                 </div>
             </div>
+            <div class="tab-pane fade" id="paid" role="tabpanel" aria-labelledby="paid-tab">
+                <div class="row">
+                    <?php foreach($paid_orders as $paid_order):?>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><?php echo $paid_order['customer_name']; ?></h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-price"><?php echo $paid_order['phone_number']; ?></p>
+                                </div>
+                                <div class="card-footer">
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach;?>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="paid-tab">
+                <div class="row">
+                    <?php foreach($completed_orders as $completed_order):?>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><?php echo $completed_order['customer_name']; ?></h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-price"><?php echo $completed_order['phone_number']; ?></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="3" value="<?php echo $completed_order['id']; ?>" name="items[]"> Add to cart
+                                        </label>
+                                    </div>
 
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach;?>
+                </div>
+            </div>
         </div>
-
         <br>
-
         <div class="btn-primary">
             <input type="submit" class="btn btn-primary" value="Submit Changes">
-
         </div>
-
 </div>
 </form>
 </body>
-
 </html>
