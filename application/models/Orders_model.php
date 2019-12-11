@@ -9,6 +9,7 @@ class Orders_model extends CI_Model {
 
     public function get_pending() {
         $this->db->where('status','pending');
+        $this->db->order_by('pickup_time','ASC');
         $query = $this->db->get('orders');
         return $query->result_array();
     }
