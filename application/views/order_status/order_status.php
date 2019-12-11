@@ -46,7 +46,7 @@
             <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
                 <div class="row">
                     <?php foreach($pending_orders as $pending_order):?>
-                        <div class="col-md-4">
+                        <div class="col-md-4" style="margin-bottom: 10px">
                             <div class="card">
                                 <div class="card-header">
                                     <h1 class="card-title">Name:</h1>
@@ -54,7 +54,6 @@
                                 </div>
                                 <div class="card-body">
                                     <p class="card-price">Phone: <?php echo $pending_order['phone_number']; ?></p>
-
                                 </div>
                                 <div class="card-footer">
                                     <div class="checkbox">
@@ -81,7 +80,7 @@
                                     <h3 class="card-title"><?php echo $started_order['customer_name']; ?></h3>
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-price"><?php echo $started_order['phone_number']; ?></p>
+                                    <p class="card-price">Phone: <?php echo $started_order['phone_number']; ?></p>
                                 </div>
                                 <div class="card-footer">
                                     <div class="checkbox">
@@ -105,7 +104,7 @@
                                     <h3 class="card-title"><?php echo $paid_order['customer_name']; ?></h3>
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-price"><?php echo $paid_order['phone_number']; ?></p>
+                                    <p class="card-price">Phone: <?php echo $paid_order['phone_number']; ?></p>
                                 </div>
                                 <div class="card-footer">
                                 </div>
@@ -117,21 +116,15 @@
             <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="paid-tab">
                 <div class="row">
                     <?php foreach($completed_orders as $completed_order):?>
-                        <div class="col-md-4">
+                        <div class="col-md-4" style="margin-bottom: 10px">
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title"><?php echo $completed_order['customer_name']; ?></h3>
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-price"><?php echo $completed_order['phone_number']; ?></p>
+                                    <p class="card-price">Phone: <?php echo $completed_order['phone_number']; ?></p>
                                 </div>
                                 <div class="card-footer">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" id="3" value="<?php echo $completed_order['id']; ?>" name="items[]"> Add to cart
-                                        </label>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
