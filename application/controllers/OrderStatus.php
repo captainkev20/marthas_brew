@@ -25,16 +25,32 @@ class OrderStatus extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
-    public function markOrderAsStarted() {
+    public function updateOrderStatus() {
         $items = $this->input->post('items');
         $completed_items = $this->input->post('completeditems');
+        $cancelled_items = $this->input->post('cancelleditems');
 
-        foreach($items as $item_id) {
-            $this->Orders_model->update($item_id,'started');
+        if(isset($_POST['items'])) {
+            foreach($items as $item_id) {
+                $this->Orders_model->update($item_id,'started');
+            }
+            echo 'Order has been started';
         }
 
-        foreach($completed_items as $item_id) {
-            $this->Orders_model->update($item_id,'completed');
+        if(isset($_POST['completeditems'])) {
+            foreach($completed_items as $item_id) {
+                $this->Orders_model->update($item_id,'completed');
+            }
+            echo 'Order has been completed';
         }
+
+        if(isset($_POST['cancelleditems'])) {
+            foreach($cancelled_items as $item_id) {
+                $this->Orders_model->update($item_id,'cancelled');
+            }
+            echo 'Order has been cancelled';
+        }
+
+
     }
 }
