@@ -124,7 +124,7 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <input type="submit" class="btn btn-primary" value="Sumbit Order">
+                            <input type="submit" class="btn btn-primary" value="Submit Order">
                         </div>
                     </div>
         </div>
