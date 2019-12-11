@@ -34,6 +34,10 @@
             <li class="nav-item">
                 <a class="nav-link" id="completed-tab" data-toggle="tab" href="#completed" role="tab" aria-controls="Cold" aria-selected="false">Completed</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" id="started-tab" data-toggle="tab" href="#started" role="tab" aria-controls="started" aria-selected="false">Started</a>
+            </li>
+
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
@@ -52,7 +56,7 @@
                                 <div class="card-footer">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="<?php echo $pending_order['id']; ?>" name="items[]"> Started
+                                            <input type="checkbox" id="1" value="<?php echo $pending_order['id']; ?>" name="items[]"> Started
                                         </label>
                                     </div>
                                 </div>
@@ -75,7 +79,7 @@
                                 <div class="card-footer">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" value="<?php echo $completed_order['id']; ?>" name="items[]"> Add to cart
+                                            <input type="checkbox" id="2" value="<?php echo $completed_order['id']; ?>" name="items[]"> Add to cart
                                         </label>
                                     </div>
 
@@ -85,6 +89,31 @@
                     <?php endforeach;?>
                 </div>
             </div>
+            <div class="tab-pane fade" id="started" role="tabpanel" aria-labelledby="started-tab">
+                <div class="row">
+                    <?php foreach($started_orders as $started_order):?>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title"><?php echo $started_order['customer_name']; ?></h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-price"><?php echo $started_order['phone_number']; ?></p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="3" value="<?php echo $started_order['id']; ?>" name="completeditems[]"> Completed
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach;?>
+                </div>
+            </div>
+
         </div>
 
         <br>
