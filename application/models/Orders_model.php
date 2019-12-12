@@ -47,4 +47,14 @@ class Orders_model extends CI_Model {
         $this->db->where('id',$id);
         $this->db->update('orders',$order);
     }
+
+    public function updatePaid($id, $paid) {
+        $order = array(
+            'paid_status' => $paid
+        );
+
+        $this->db->where('id',$id);
+        $this->db->update('orders',$order);
+    }
+
 }
