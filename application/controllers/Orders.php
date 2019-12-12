@@ -28,22 +28,48 @@ class Orders extends CI_Controller {
 
     public function submit() {
 
-        $customer_name = $this->input->post('customer_name');
-        $phone_number = $this->input->post('phone_number');
-        $items = $this->input->post('items');
+        if(isset($_POST['pay_with_cash'])) {
+            $customer_name = $this->input->post('customer_name');
+            $phone_number = $this->input->post('phone_number');
+            $items = $this->input->post('items');
 
-        $cost = 0;
-        foreach($items as $item_id) {
-            $cost = $cost + $this->Items_model->getCost($item_id);
+            $cost = 0;
+            foreach($items as $item_id) {
+                $cost = $cost + $this->Items_model->getCost($item_id);
+            }
+
+            $order_id = $this->Orders_model->create($customer_name,$phone_number,$cost);
+
+            foreach($items as $item_id) {
+                $this->Order_items_model->create($order_id, $item_id);
+            }
+
+            echo "Your order is complete!";
+        } else if(isset($_POST['pay_with_card'])) {
+            $customer_name = $this->input->post('customer_name');
+            $phone_number = $this->input->post('phone_number');
+            $items = $this->input->post('items');
+
+            $cost = 0;
+            foreach($items as $item_id) {
+                $cost = $cost + $this->Items_model->getCost($item_id);
+            }
+
+            session_start();
+
+            $order_id = $this->Orders_model->create($customer_name,$phone_number,$cost);
+            $_SESSION['order_cost'] = $cost;
+            $_SESSION['order_id'] = $order_id;
+
+            foreach($items as $item_id) {
+                $this->Order_items_model->create($order_id, $item_id);
+            }
+
+            // Redirect to payment page
+            redirect('http://localhost:8888/marthas_brew/payment', 'refresh');
+
+
         }
-
-        $order_id = $this->Orders_model->create($customer_name,$phone_number,$cost);
-
-        foreach($items as $item_id) {
-            $this->Order_items_model->create($order_id, $item_id);
-        }
-
-        echo "Your order is complete!";
     }
 
     public function view($id = NULL) {

@@ -128,6 +128,14 @@
                                 </div>
                             </div>
                         </div>
+
+                        <label>
+                            <input type="checkbox" value="Pay with cash" name="pay_with_cash[]"> Pay with Cash
+                        </label>
+
+                        <label>
+                            <input type="checkbox" value="Pay with card" name="pay_with_card[]"> Pay with Card
+                        </label>
                         <div class="card-footer">
                             <input type="submit" class="btn btn-primary" value="Submit Order">
                         </div>
